@@ -98,7 +98,7 @@ estimated_pars <- c(
 )
 code_version <- ""
 
-setwd("/Users/2m/Library/ode" + code_version)
+setwd(file.path("ode", code_version))
 
 ###################################################
 ## Data reading
@@ -109,7 +109,6 @@ red_line <- 10**2.93463
 get_infected_data <- function(folder_name) {
   int_data <- vector(mode = "list", length = 3)
   for (i in c(1:3)) {
-    ### koko!!
     rfn <- paste("data/", folder_name, "/summary_R", as.character(i), ".txt", sep = "")
     print(rfn)
     dsf <- read.csv(rfn, sep = "\t", header = T)
@@ -1029,7 +1028,6 @@ combined_plot <- grid.arrange(grobs = labeled_plots, ncol = 7, nrow = 3)
 ggsave("combined_plot_paper.png", plot = combined_plot, width = 49, height = 21)
 
 ### Reactivation Pars Plot ###
-### 今日も頑張ろう、歯医者に遅れないよう ###
 load(paste("MCMC_mixture", code_version, "1.Rdata", sep = ""))
 
 # MCMC の結果から受理されたサンプルを取得

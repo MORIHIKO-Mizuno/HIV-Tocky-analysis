@@ -1,14 +1,6 @@
 library(tidyverse)
 library(tidyr)
 library(ggplot2)
-# 文字列結合のための関数, 意味わからん
-"+" <- function(e1, e2) {
-    if (is.character(c(e1, e2))) {
-        paste(e1, e2, sep = "")
-    } else {
-        base::"+"(e1, e2)
-    }
-}
 pltsetd <- theme_classic() +
     theme( text = element_text(size = 14, color = "black", face = "bold"),
            axis.ticks = element_line(colour = "black"),
@@ -23,9 +15,8 @@ pltsetd <- theme_classic() +
     )
 
 rm(list = ls(all = TRUE)) # メモリ解放
-med="JQ1"
-parent_folder <- paste0("/Users/2m/Library/data/",
-                        med,"_infected")
+med <- "JQ1"
+parent_folder <- file.path("data", paste0(med, "_infected"))
 setwd(parent_folder)
 folders <- c("R1", "R2", "R3")
 
