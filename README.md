@@ -1,4 +1,4 @@
-# HIV Latency Reactivation Analysis
+# HIV-Tocky-Analysis
 
 このリポジトリは、卒業研究に関連する数理モデル解析のサンプルコードをまとめたものです。  
 主に **HIV 潜伏感染細胞の動態解析** を対象とし、Timer蛍光タンパク質 (HIV-Tocky システム) 実験データに基づいています。
